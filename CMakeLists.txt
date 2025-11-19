@@ -18,11 +18,7 @@ if (NOT CMAKE_BUILD_TYPE)
 		"Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel." FORCE)
 endif (NOT CMAKE_BUILD_TYPE)
 
-
-
 # The submodules/binaries
 
 add_subdirectory( DepTool )
-
-
 

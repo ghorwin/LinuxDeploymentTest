@@ -3,14 +3,9 @@
 
 project( DepTool )
 
-# collect a list of all source files
-file( GLOB APP_SRCS ${PROJECT_SOURCE_DIR}/src/*.cpp )
+add_executable( ${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/src/main.cpp )
 
-add_executable( ${PROJECT_NAME}
-	${APP_SRCS}
-)
-
-# we want the binary to be named 'deptool' as under linux command line tools
+# we want the binary to be named 'deptool' as linux command line tools
 # are usually in lower case
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "deptool")
 
@@ -20,8 +15,7 @@ if (UNIX AND NOT APPLE)
 	include(GNUInstallDirs)
 	
 	# DepTool -> /usr/bin/deptool
-	install(TARGETS ${PROJECT_NAME} RUNTIME 
-		DESTINATION bin)
+	install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION bin)
 	
 	# Man-page -> /usr/share/man/man1/deptool.1.gz
 	install(FILES ${PROJECT_SOURCE_DIR}/doc/deptool.1 
