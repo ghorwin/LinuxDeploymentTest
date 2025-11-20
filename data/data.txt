@@ -1,0 +1,2 @@
+This is a simple data file to be installed together with the command line application and to be read during tool execution.
+

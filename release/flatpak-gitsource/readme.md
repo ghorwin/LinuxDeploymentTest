@@ -1,11 +1,10 @@
-To build run in flatpak directory:
+# Flatpak-Configuration for github source location
 
-First setup flatpak in this directory:
+## Required runtimes
 
-You need to install the kde runtime and sdk:
+flatpak install org.freedesktop.Sdk/x86_64/24.08
 
-flatpak install 
+## Creating Flatpak
 
-#flatpak-builder --user --ccache --repo=repo --subject="LinuxDeploymentTest `date`" --force-clean build org.ghowin.linuxdeptool.yml
+flatpak-builder --force-clean build org.ghowin.linuxdeptool.yml
 
-flatpak-builder build org.ghowin.linuxdeptool.yml

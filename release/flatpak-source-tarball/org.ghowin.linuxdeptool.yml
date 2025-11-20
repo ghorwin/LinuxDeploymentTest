@@ -1,0 +1,30 @@
+app-id: org.ghowin.linuxdeptool
+runtime: org.kde.Platform
+runtime-version: '5.15-25.08'
+sdk: org.kde.Sdk
+command: deptool
+#rename-desktop-file: ubpm.desktop
+#rename-icon: ubpm
+#finish-args:
+#  - --socket=x11
+# wayland fails to open default browser?
+#  - --socket=wayland
+#  - --socket=fallback-x11
+#  - --socket=cups
+#  - --device=all
+#  - --share=ipc
+#  - --share=network
+#  - --allow=bluetooth
+#  - --system-talk-name=org.bluez
+#  - --filesystem=home
+#  - --filesystem=/run/udev:ro
+modules:
+  - name: deptool
+    buildsystem: cmake
+#    config-opts:
+#      - DEFINES+=FLATPAK
+#    subdir: sources
+    sources:
+      - type: git
+        url: https://github.com/ghorwin/LinuxDeploymentTest.git
+        tag: v1_command_line_tool
